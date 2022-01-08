@@ -1,0 +1,63 @@
+<div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Bir kullanıcı oluştur!</h1>
+                                <% if (locals.validation_error!=undefined) { %>
+                                    <%- include('./partials/_message') %> 
+                                <% } %>
+                            </div>
+                            <!-- Form submit olunca /register a git -->
+                            <form class="user" action="/register" method="post">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" name="ad"  value="<%=typeof ad!='undefined'?ad: '' %>" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder=" Adınız ">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="soyad"  value="<%=typeof soyad!='undefined'?soyad: '' %>" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="Soyadınız">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" value="<%=typeof email!="undefined"?email:'' %> " name="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Adres">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <!-- res.locals içine kaydetiğimiz değerleri burada kullandık. -->
+                                        <input type="password" name="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Şifre">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password"name="repassword" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="Tekrar(Şifre)">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Kullanıcı oluştur
+                                </button>
+                                <hr>
+                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                </a>
+                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                </a>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="/forgot-password">Şifremi Unuttum?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="/login">Bir hesabın var mı? Giriş Yap!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
